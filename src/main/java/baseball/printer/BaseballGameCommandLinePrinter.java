@@ -10,7 +10,7 @@ public class BaseballGameCommandLinePrinter implements BaseballGamePrinter {
     @Override
     public void printHintMessage(int strike, int ball) {
         if (strike == 0 && ball == 0) {
-            System.out.println("낫싱");
+            System.out.print("낫싱");
         }
 
         if (ball != 0) {
@@ -18,8 +18,9 @@ public class BaseballGameCommandLinePrinter implements BaseballGamePrinter {
         }
 
         if (strike != 0) {
-            System.out.printf("%스트라이크", strike);
+            System.out.printf("%d스트라이크", strike);
         }
+        System.out.println(); // 줄바꿈
     }
 
     @Override
