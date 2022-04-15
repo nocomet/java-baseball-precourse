@@ -25,7 +25,6 @@ public class BaseballGameStarter {
 
     public void start() {
         BaseballGameJudgement judgement;
-
         do {
             printer.printInputMessage();
             List<Integer> inputNumbers = scanner.scanGameNumber();
