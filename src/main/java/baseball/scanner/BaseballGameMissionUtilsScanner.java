@@ -4,7 +4,6 @@ import baseball.BaseballGameConf;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class BaseballGameMissionUtilsScanner implements BaseballGameScanner {
@@ -12,10 +11,10 @@ public class BaseballGameMissionUtilsScanner implements BaseballGameScanner {
     @Override
     public List<Integer> scanGameNumber() {
         String inputString = Console.readLine();
-        ScannerUtils.validateNotNull(inputString);
-        ScannerUtils.validateInputStringLength(inputString, BaseballGameConf.BALL_COUNT);
-        ScannerUtils.validateInputStringNumberFormat(inputString);
-        // todo 음수일 경우 예외 처리 해야한다.
+        ScannerCommonUtils.validateNotNull(inputString);
+        ScannerCommonUtils.validateInputStringLength(inputString, BaseballGameConf.BALL_COUNT);
+        ScannerCommonUtils.validateInputStringNumberFormat(inputString);
+        validateNotMinusNumber(Integer.parseInt(inputString));
         return splitNumber(inputString);
     }
 
@@ -25,5 +24,11 @@ public class BaseballGameMissionUtilsScanner implements BaseballGameScanner {
             numbers.add(Character.getNumericValue(inputString.charAt(i)));
         }
         return numbers;
+    }
+
+    void validateNotMinusNumber(int inputNumber) {
+        if (inputNumber < 0) {
+            throw new IllegalArgumentException("input으로 입력한 숫자가 음수입니다.");
+        }
     }
 }

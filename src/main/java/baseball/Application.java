@@ -16,6 +16,7 @@ public class Application {
             BaseballGameStarter baseballGameStarter = new BaseballGameStarter();
             baseballGameStarter.start();
 
+            // game end. restart?
             restartPrinter.printRestartMessage();
             isRunning = restartScanner.scanRestartSignal();
         }
