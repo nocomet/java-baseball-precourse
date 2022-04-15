@@ -1,5 +1,6 @@
 package baseball.scanner;
 
+import baseball.BaseballGameConf;
 import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;
@@ -12,8 +13,9 @@ public class BaseballGameMissionUtilsScanner implements BaseballGameScanner {
     public List<Integer> scanGameNumber() {
         String inputString = Console.readLine();
         ScannerUtils.validateNotNull(inputString);
-        ScannerUtils.validateInputStringLength(inputString, 3);
+        ScannerUtils.validateInputStringLength(inputString, BaseballGameConf.BALL_COUNT);
         ScannerUtils.validateInputStringNumberFormat(inputString);
+        // todo 음수일 경우 예외 처리 해야한다.
         return splitNumber(inputString);
     }
 

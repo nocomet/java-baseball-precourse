@@ -1,5 +1,7 @@
 package baseball.printer;
 
+import baseball.BaseballGameConf;
+
 public class BaseballGameCommandLinePrinter implements BaseballGamePrinter {
 
     @Override
@@ -23,6 +25,6 @@ public class BaseballGameCommandLinePrinter implements BaseballGamePrinter {
 
     @Override
     public void printGameEndMessage() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        System.out.println(BaseballGameConf.BALL_COUNT + "개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 }
