@@ -1,26 +1,25 @@
 package baseball;
 
+import baseball.answer.BaseballGameAnswerMarker;
 import baseball.judgement.BaseballGameJudgement;
 import baseball.judgement.BaseballGameJudgementService;
 import baseball.printer.BaseballGameCommandLinePrinter;
 import baseball.printer.BaseballGamePrinter;
 import baseball.scanner.BaseballGameMissionUtilsScanner;
 import baseball.scanner.BaseballGameScanner;
-import camp.nextstep.edu.missionutils.Randoms;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class BaseballGameStarter {
 
     private final BaseballGamePrinter printer = new BaseballGameCommandLinePrinter();
     private final BaseballGameScanner scanner = new BaseballGameMissionUtilsScanner();
     private final BaseballGameJudgementService judgementService = new BaseballGameJudgementService();
-    private final List<Integer> gameNumber = generateGameNumber();
+    private final BaseballGameAnswerMarker answerMarker = new BaseballGameAnswerMarker();
+    private final List<Integer> gameAnswer = generateGameAnswer();
 
-    public List<Integer> generateGameNumber() {
-        // todo 0-9까지 중복이 없는 3개의 숫자
-        return Arrays.asList(Randoms.pickNumberInRange(0, 9));
+    List<Integer> generateGameAnswer() {
+        return answerMarker.makeGameAnswer(3);
     }
 
     public void start() {
