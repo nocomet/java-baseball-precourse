@@ -15,7 +15,6 @@ public class BaseballGameMissionUtilsRestartScanner implements BaseballGameResta
         ScannerUtils.validateInputStringNumberFormat(inputString);
         int inputNumber = Character.getNumericValue(inputString.charAt(0));
         ScannerUtils.validateInput1Or2(inputNumber);
-
         return inputNumber == 1;
     }
 }
