@@ -1,5 +1,6 @@
 package baseball.scanner;
 
+import baseball.BaseballGameConf;
 import camp.nextstep.edu.missionutils.Console;
 
 public class BaseballGameMissionUtilsRestartScanner implements BaseballGameRestartScanner {
@@ -12,7 +13,7 @@ public class BaseballGameMissionUtilsRestartScanner implements BaseballGameResta
         ScannerCommonUtils.validateInputStringNumberFormat(inputString);
         int inputNumber = Character.getNumericValue(inputString.charAt(0));
         validateInput1Or2(inputNumber);
-        return inputNumber == 1;
+        return inputNumber == BaseballGameConf.GAME_RESTART;
     }
 
     void validateInput1Or2(int inputNumber) {
